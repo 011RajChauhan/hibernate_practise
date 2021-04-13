@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernatedb</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">admin</property>
+
+        <!--JDBC connection pool (use the built in)-->
+        <property name="connection.pool_size">1</property>
+
+        <!--SQL Dialect-->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!--print out all the SQL that hibernate generates-->
+        <property name="show_sql">true</property>
+        <!--Drop and re create database schema on startup-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <mapping class="com.rj.practise.UserDetails"></mapping>
+    </session-factory>
+</hibernate-configuration>
